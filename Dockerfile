@@ -1,4 +1,4 @@
-FROM python:3.8-buster
+FROM python:3.8-slim-buster
 
 # install all the dependencies except libcairo2 from jessie
 RUN apt-get -y update \
