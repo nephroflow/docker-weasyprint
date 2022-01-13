@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster
+FROM python:3.10-slim-bullseye
 
 # install all the dependencies except libcairo2 from jessie
 RUN apt-get -y update \
@@ -8,7 +8,7 @@ RUN apt-get -y update \
         libgdk-pixbuf2.0-0 \
         libpango1.0-0 \
         python-dev \
-        python-lxml \
+        python3-lxml \
         shared-mime-info \
         libcairo2 \
     && apt-get -y clean
