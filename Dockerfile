@@ -6,6 +6,8 @@ RUN apt-get -y update \
     python3-pip python3-cffi python3-brotli libpango-1.0-0 libpangoft2-1.0-0 \
     && apt-get -y clean
 
+ADD fonts /usr/share/fonts
+
 WORKDIR /usr/src/app
 
 COPY requirements.txt ./
