@@ -2,9 +2,10 @@ FROM python:slim-bullseye
 
 # install all the dependencies except libcairo2 from jessie
 RUN apt-get -y update \
-    && apt-get install -y \
+    && apt-get install --no-install-recommends -y \
     python3-pip python3-cffi python3-brotli libpango-1.0-0 libpangoft2-1.0-0 \
-    && apt-get -y clean
+    && apt-get -y clean \
+    && rm -rf /var/lib/apt/lists/*
 
 ADD fonts /usr/share/fonts
 
