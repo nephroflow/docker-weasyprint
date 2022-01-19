@@ -13,6 +13,8 @@ RUN apt-get -y update \
         libcairo2 \
     && apt-get -y clean
 
+ADD fonts /usr/share/fonts
+
 WORKDIR /usr/src/app
 
 COPY requirements.txt ./
