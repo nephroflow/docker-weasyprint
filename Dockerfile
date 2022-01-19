@@ -2,7 +2,7 @@ FROM python:3.10-slim-bullseye
 
 # install all the dependencies except libcairo2 from jessie
 RUN apt-get -y update \
-    && apt-get install -y \
+    && apt-get install --no-install-recommends -y \
         fonts-font-awesome \
         libffi-dev \
         libgdk-pixbuf2.0-0 \
@@ -11,7 +11,8 @@ RUN apt-get -y update \
         python3-lxml \
         shared-mime-info \
         libcairo2 \
-    && apt-get -y clean
+    && apt-get -y clean \
+    && rm -rf /var/lib/apt/lists/*
 
 ADD fonts /usr/share/fonts
 
