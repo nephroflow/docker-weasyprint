@@ -1,4 +1,4 @@
-FROM python:3.10-slim-bullseye
+FROM python:3.11-slim-bullseye
 
 # install all the dependencies except libcairo2 from jessie
 RUN apt-get -y update \
