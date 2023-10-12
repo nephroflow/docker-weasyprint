@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  weasyprint:
+    build:
+      context: .
+    image: nephroflow/weasyprint
+    command: gunicorn --bind 0.0.0.0:5001 wsgi:app
+    volumes:
+      - .:/usr/src/app:cached

@@ -1,8 +1,7 @@
-#!/usr/bin/env python3.5
+#!/usr/bin/env python
 
 import json
 import re
-import subprocess
 import unittest
 from urllib.request import Request, urlopen
 
